@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:io';
 
 void main() => runApp(MyApp());
 
@@ -8,6 +9,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+          primaryColor: Colors.white,
+          backgroundColor: Colors.red
+      ),
       title: 'Instagram',
       home: MyHomePage(),
     );
@@ -23,9 +28,9 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(icon: Icon(Icons.camera_alt), color: colorIcon, onPressed: (){}),
-        backgroundColor: Colors.white,
+        backgroundColor:  Platform.isAndroid ? Colors.white : Color(0xFFf3f3f3),
         actionsIconTheme: IconThemeData(color: colorIcon),
-        elevation: 1.6,
+        elevation: Platform.isAndroid ? 1.6 : 0.8,
         title: Text("Instagram", style: TextStyle(color: colorIcon, fontFamily: "Instagram", fontSize: 30),),
         actions: <Widget>[
           IconButton(icon: Icon(Icons.send), onPressed: (){},)
@@ -41,7 +46,7 @@ class MyHomePage extends StatelessWidget {
 }
 
 Widget histories(BuildContext context) {
-    double height = 80;
+    double height = 90;
     return Container(
       width: MediaQuery.of(context).size.width,
       height: height,
@@ -126,8 +131,8 @@ Widget histore(BuildContext context, double size, Pessoa pessoa) {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Container(
-            width: 50.0,
-            height: 50.0,
+            width: 59.0,
+            height: 59.0,
             margin: EdgeInsets.only(bottom: 3),
             alignment: Alignment.center,
             decoration: BoxDecoration(
@@ -137,8 +142,8 @@ Widget histore(BuildContext context, double size, Pessoa pessoa) {
                 ),
             ),
             child: Container(
-              width: 45.0,
-              height: 45.0,
+              width: 55.0,
+              height: 55.0,
               alignment: Alignment.center,
               decoration: BoxDecoration(
                   shape: BoxShape.circle,
@@ -155,18 +160,8 @@ Widget histore(BuildContext context, double size, Pessoa pessoa) {
    );
 }
 
-//Container(
-//width: 50.0,
-//height: 50.0,
-//margin: EdgeInsets.only(bottom: 3),
-//alignment: Alignment.center,
-//decoration: BoxDecoration(
-//shape: BoxShape.circle,
-//image: DecorationImage(
-//fit: BoxFit.cover,
-//image: NetworkImage(pessoa.img)
-//)
-//),
-//),
+Widget card(BuildContext context) {
+
+}
 
 
