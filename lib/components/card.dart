@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'avatar.dart';
 import '../providers/person/person.dart';
+import '../CustomIcon.dart';
 
 final Color colorIcon   = Colors.black;
 final TextStyle negrito = TextStyle(fontWeight: FontWeight.w500);
@@ -30,13 +31,13 @@ Widget CardPerson(Person person) {
           Image.network(person.image),
           Row(
             children: <Widget>[
-              IconButton(icon: Icon(Icons.favorite_border, color: colorIcon, size: 24,), onPressed: (){},),
-              IconButton(icon: Icon(Icons.chat_bubble_outline, color: colorIcon, size: 24, ), onPressed: (){}),
-              IconButton(icon: Icon(Icons.send, color: colorIcon, size: 24,), onPressed: (){},),
+              IconButton(icon: Icon(CustomIcons.heart, color: colorIcon, size: 24,), onPressed: (){},),
+              IconButton(icon: Icon(CustomIcons.comment, color: colorIcon, size: 24, ), onPressed: (){}),
+              IconButton(icon: Icon(CustomIcons.send, color: colorIcon, size: 24,), onPressed: (){},),
               Expanded(
                   child: Container()
               ),
-              IconButton(icon: Icon(Icons.bookmark_border, color: colorIcon,size: 24,), onPressed: (){}, alignment: Alignment.centerRight,),
+              IconButton(icon: Icon(CustomIcons.bookmark, color: colorIcon,size: 24,), onPressed: (){}, alignment: Alignment.centerRight,),
             ],
           ),
           Padding(

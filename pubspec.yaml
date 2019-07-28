@@ -38,6 +38,9 @@ flutter:
   - family: Instagram
     fonts:
     - asset: assets/fonts/billabong.ttf
+  - family: customIcon
+    fonts:
+    - asset: assets/fonts/customicon.ttf
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
